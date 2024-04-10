@@ -11,15 +11,15 @@ def game(our_choice)
     they_chose = "scissors"
   end
 
-  response = "<h1>We played #{our_choice}!</h1>"
-  response += "<h1>They played #{they_chose}!</h1>"
+  response = "<h2>We played #{our_choice}!</h2>"
+  response += "<h2>They played #{they_chose}!</h2>"
 
   if our_choice == they_chose
-    response += "<h1>We tied!</h1>"
+    response += "<h2>We tied!</h2>"
   elsif (our_choice == "rock" && they_chose == "scissors") || (our_choice == "paper" && they_chose == "rock") || (our_choice == "scissors" && they_chose == "paper")
-    response += "<h1>We won!</h1>"
+    response += "<h2>We won!</h2>"
   else
-    response += "<h1>We lost!</h1>"
+    response += "<h2>We lost!</h2>"
   end
 
   response
@@ -34,11 +34,11 @@ get("/rock") do
 end
 
 get("/paper") do
-  game("paper")
+  @result = game("paper")
   erb(:game)
 end
 
 get("/scissors") do
-  game("scissors")
+  @result = game("scissors")
   erb(:game)
 end
