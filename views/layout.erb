@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sinatra RPS</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-  </head>
-
-  <body>
-
-    <%= yield %>
-
-  </body>
+<head>
+  <title>Sinatra RPS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+  <%= yield %>
+  <div class="navbar">
+    <div><a href="/">Rules</a></div>
+    <div><a href="/rock">Rock</a></div>
+    <div><a href="/paper">Paper</a></div>
+    <div><a href="/scissors">Scissors</a></div>
+  </div>
+  <%= @response %>
+</body>
 </html>
